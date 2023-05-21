@@ -10,6 +10,8 @@ public class Engine : MonoBehaviour
 	[Range(0, 1)]
 	public float throttle = 1.0f;
 
+	[SerializeField] private Transform raytransform;
+
 	[Tooltip("How much power the engine puts out.")]
 	public float thrust;
 
@@ -25,7 +27,7 @@ public class Engine : MonoBehaviour
 		if (rigid != null)
 		{
 			rigid.AddRelativeForce((Vector3.forward * thrust * throttle), ForceMode.Force);
-			if(Physics.Raycast(transform.position,-transform.up, 2))
+			if(Physics.Raycast(raytransform.position,-transform.up, 2))
             {
 				rigid.AddRelativeForce((Vector3.up * thrust * throttle), ForceMode.Force);
 			}

@@ -18,19 +18,6 @@ public class GearVisuals : MonoBehaviour
         visualToWheelMap = new Dictionary<Transform, WheelCollider>();
     }
 
-    private void Start()
-    {
-        if (wheelVisualizerPrefab != null)
-        {
-            // Create a cylinder and associate each cylinder with a wheel.
-            foreach (WheelCollider wheel in wheels)
-            {
-                Transform visual = Instantiate(wheelVisualizerPrefab, wheel.transform);
-                visualToWheelMap.Add(visual, wheel);
-            }
-        }
-    }
-
     private void Update()
     {
         if (visualToWheelMap.Count > 0)
@@ -43,7 +30,6 @@ public class GearVisuals : MonoBehaviour
                 visualWheel.Value.GetWorldPose(out pos, out rot);
                 visualWheel.Key.position = pos;
                 visualWheel.Key.rotation = rot;
-                Debug.Log(visualWheel.Value.brakeTorque);
                 // Apply brakes when Fire2 axis is pressed
                 if (Input.GetButton("Fire2"))
                 {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class reng : MonoBehaviour
 {
-    [SerializeField] private bool finalreng;
+    public bool finalreng;
     private void OnTriggerStay(Collider other)
     {
         if(other.transform.tag == "Player")
@@ -12,6 +12,7 @@ public class reng : MonoBehaviour
             if(other.GetComponent<Rigidbody>().velocity.magnitude < 1f || !finalreng)
             {
                 Destroy(this.gameObject);
+                
             }
             
         }
