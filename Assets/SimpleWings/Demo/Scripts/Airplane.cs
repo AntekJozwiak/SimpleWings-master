@@ -18,7 +18,7 @@ public class Airplane : MonoBehaviour
 
 	public Rigidbody Rigidbody { get; internal set; }
 
-	private float throttle = 1.0f;
+	[SerializeField] private float throttle = 1.0f;
 	private bool yawDefined = false;
 
 	private void Awake()

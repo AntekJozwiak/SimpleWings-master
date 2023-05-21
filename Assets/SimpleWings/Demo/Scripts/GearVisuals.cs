@@ -43,7 +43,7 @@ public class GearVisuals : MonoBehaviour
                 visualWheel.Value.GetWorldPose(out pos, out rot);
                 visualWheel.Key.position = pos;
                 visualWheel.Key.rotation = rot;
-
+                Debug.Log(visualWheel.Value.brakeTorque);
                 // Apply brakes when Fire2 axis is pressed
                 if (Input.GetButton("Fire2"))
                 {
