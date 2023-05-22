@@ -83,17 +83,6 @@ public class Airplane : MonoBehaviour
 
 			engine.throttle = throttle;
 		}
-
-		if (weapons.Length > 0)
-		{
-			if (Input.GetButtonDown("Fire3"))
-			{
-				foreach (WeaponDropper dropper in weapons)
-				{
-					dropper.Fire(Rigidbody.GetPointVelocity(dropper.transform.position));
-				}
-			}
-		}
 	}
 
 	private float CalculatePitchG()
