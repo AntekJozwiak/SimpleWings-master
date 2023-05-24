@@ -12,6 +12,7 @@ public class Airplane : MonoBehaviour
 	public ControlSurface aileronLeft;
 	public ControlSurface aileronRight;
 	public ControlSurface rudder;
+	public AudioSource audioSource;
 	public Engine engine;
 
 	public WeaponDropper[] weapons;
@@ -54,6 +55,7 @@ public class Airplane : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		audioSource.volume = throttle+0.1f;
 		if (elevator != null)
 		{
 			elevator.targetDeflection = -Input.GetAxis("Vertical");
